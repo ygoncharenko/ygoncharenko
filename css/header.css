@@ -1,0 +1,57 @@
+/* Header & Navigation */
+header {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        gap: 0.5rem; /* Менша відстань між кнопками */
+        padding: 0 10px;
+        flex-wrap: wrap; /* Дозволяємо перенос на наступний рядок, якщо зовсім мало місця, або лишаємо в лінію */
+        justify-content: center;
+    }
+
+    .nav-button {
+        padding: 0.5rem 1rem; /* Компактніші кнопки */
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 0.3rem;
+    }
+    
+    .nav-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+.nav-button {
+    background-color: var(--color-primary-dark);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #262340; /* Darkest purple */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,52 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    /* background: radial-gradient(circle at center, rgba(101, 95, 189, 0.5) 0%, transparent 70%); */
+}
+
+.hero .main-title {
+    font-size: clamp(4rem, 12vw, 10rem);
+    z-index: 2;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main .hero .inside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hero-ghost {
+    width: 80%;
+    max-width: 800px;
+    opacity: 1; /* Повна непрозорість */
+}
+
+.hero-ghost img {
+    display: block;
+    max-width: 100%;
+    z-index: 1;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2)); /* Додаємо легке світіння */
+}
+
+@media (max-width: 768px) {
+    .hero .main-title {
+        font-size: 4rem;
+    }
+
+    .hero-ghost {
+        width: 90%;
+    }
+}
+
