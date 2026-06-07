@@ -1,48 +1,59 @@
-
-
-/* @font-face {
-  font-family: 'Cheshirskiy Cat Roman';
-  src: url('../fonts/cheshirskiy-cat-roman.ttf') format('truetype');
-  font-style: normal;
-} */
-
-@font-face {
-    font-family: 'Cheshirskiy Cat';
-    src: url('../fonts/cheshirskiy-cat-roman.eot');
-    src: url('../fonts/cheshirskiy-cat-roman.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/cheshirskiy-cat-roman.woff2') format('woff2'),
-         url('../fonts/cheshirskiy-cat-roman.woff') format('woff'),
-         url('../fonts/cheshirskiy-cat-roman.ttf')  format('truetype'),
-         url('fonts/cheshirskiy-cat-roman.svg#Cheshirskiy Cat') format('svg');
+/* Header & Navigation */
+header {
+    width: 100%;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    position: absolute; /* Changed to absolute to sit on top of hero without pushing it down */
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
-/* @font-face {
-  font-family: 'Frutiger Neue';
-  src: url('../fonts/FrutigerNeueLTW1G-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-} */
-
-@font-face {
-    font-family: 'Frutiger Regular';
-    src: url('../fonts/FrutigerNeueLTW1G-Regular.eot');
-    src: local('Frutiger Neue LT W1G Regular'), local('FrutigerNeueLTW1G-Regular'),
-        url('../fonts/FrutigerNeueLTW1G-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/FrutigerNeueLTW1G-Regular.woff2') format('woff2'),
-        url('../fonts/FrutigerNeueLTW1G-Regular.woff') format('woff'),
-        url('../fonts/FrutigerNeueLTW1G-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+nav {
+    display: flex;
+    gap: 1.5rem;
 }
 
-@font-face {
-    font-family: 'Frutiger Bold';
-    src: url('../fonts/FrutigerNeueLTW1G-Bold.eot');
-    src: local('Frutiger Neue LT W1G Bold'), local('FrutigerNeueLTW1G-Bold'),
-        url('../fonts/FrutigerNeueLTW1G-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/FrutigerNeueLTW1G-Bold.woff2') format('woff2'),
-        url('../fonts/FrutigerNeueLTW1G-Bold.woff') format('woff'),
-        url('../fonts/FrutigerNeueLTW1G-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+@media (max-width: 768px) {
+    nav {
+        gap: 0.5rem; /* Менша відстань між кнопками */
+        padding: 0 10px;
+        flex-wrap: wrap; /* Дозволяємо перенос на наступний рядок, якщо зовсім мало місця, або лишаємо в лінію */
+        justify-content: center;
+    }
+
+    .nav-button {
+        padding: 0.5rem 1rem; /* Компактніші кнопки */
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 0.3rem;
+    }
+    
+    .nav-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+.nav-button {
+    background-color: var(--color-primary-dark);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #262340; /* Darkest purple */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
