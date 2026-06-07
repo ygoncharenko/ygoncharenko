@@ -95,7 +95,7 @@ main section .inside {
 /* Footer */
 .footer {
     background: transparent; /* Прозорий фон для безшовного градієнта тіла */
-    color: var(--color-text-dark);
+    color: #3D3876;
     padding: 10rem 2rem 0; 
     position: relative;
     overflow: visible;
@@ -139,7 +139,6 @@ main section .inside {
     font-family: var(--font-main-bold);
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: #ffffff; /* Трохи насиченіший колір для заголовків */
 }
 
 .footer-col p, .footer-col li {
@@ -165,10 +164,10 @@ main section .inside {
 }
 
 .social-link img {
-    height: 24px; /* Корекція розміру */
+    height: 24px;
     width: auto;
-    filter: brightness(0) invert(1); /* Робимо іконки білими як у Figma */
-    transition: opacity 0.2s ease;
+    /* Фільтр видалено, колір задається в SVG */
+    transition: all 0.2s ease;
 }
 
 .social-link:hover img {
