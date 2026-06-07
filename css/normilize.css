@@ -1,6 +1,99 @@
+:root {
+    --color-primary: #655fbd;
+    --color-primary-light: #d8d5fb;
+    --color-primary-dark: #3d386b;
+    --color-text-white: #ffffff;
+    --color-text-dark: #3c3024;
+    --color-card-bg: rgba(255, 255, 255, 0.2);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --font-main-text: 'Frutiger Regular', sans-serif;
+    --font-main-bold: 'Frutiger Bold', sans-serif;
+    --font-header: 'Cheshirskiy Cat', serif;
+}
 
-*, *::before, *::after {
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-main-text);
+    font-size: 18px;
+    font-weight: 400;
+    /* Безшовний градієнт на всю сторінку */
+    background: linear-gradient(180deg, 
+        #3d386b 0%, 
+        #655fbd 30%, 
+        #655fbd 70%, 
+        #6A63B4 85%, 
+        #CAC7F5 100%);
+    color: var(--color-text-white);
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    letter-spacing: .02em;
+}
+
+/* Content Sections */
+section .inside {
+    max-width: 1000px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 20px;
+    position: relative;
+}
+
+.section-title {
+    text-align: left !important;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-text {
+    font-weight: 400;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.section-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 5rem; /* Збільшено відступ до карток */
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        text-align: center !important;
+    }
+    
+    .section-text {
+        font-size: 1rem;
+        text-align: center;
+        margin: 0 auto 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    section .inside {
+        padding: 3rem 15px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }

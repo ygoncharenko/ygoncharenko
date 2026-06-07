@@ -1,52 +1,59 @@
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    /* background: radial-gradient(circle at center, rgba(101, 95, 189, 0.5) 0%, transparent 70%); */
-}
-
-.hero .main-title {
-    font-size: clamp(4rem, 12vw, 10rem);
-    z-index: 2;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-main .hero .inside {
+/* Header & Navigation */
+header {
+    width: 100%;
+    padding: 1.5rem 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    position: relative;
+    position: absolute; /* Changed to absolute to sit on top of hero without pushing it down */
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
-.hero-ghost {
-    width: 80%;
-    max-width: 800px;
-    opacity: 1; /* Повна непрозорість */
-}
-
-.hero-ghost img {
-    display: block;
-    max-width: 100%;
-    z-index: 1;
-    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2)); /* Додаємо легке світіння */
+nav {
+    display: flex;
+    gap: 1.5rem;
 }
 
 @media (max-width: 768px) {
-    .hero .main-title {
-        font-size: 4rem;
+    nav {
+        gap: 0.5rem; /* Менша відстань між кнопками */
+        padding: 0 10px;
+        flex-wrap: wrap; /* Дозволяємо перенос на наступний рядок, якщо зовсім мало місця, або лишаємо в лінію */
+        justify-content: center;
     }
 
-    .hero-ghost {
-        width: 90%;
+    .nav-button {
+        padding: 0.5rem 1rem; /* Компактніші кнопки */
+        font-size: 0.9rem;
+        border-radius: 20px;
     }
 }
 
+@media (max-width: 480px) {
+    nav {
+        gap: 0.3rem;
+    }
+    
+    .nav-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+.nav-button {
+    background-color: var(--color-primary-dark);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #262340; /* Darkest purple */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
